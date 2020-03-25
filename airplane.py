@@ -25,7 +25,7 @@ class Airplane():
         f.close()
         
         ### INSTANTIATE SUBSYSTEMS ###
-        left_control_pitch = Left_Control_Pitch()
+        left_control_pitch = Left_Control_Pitch(self)
         self.left_control_pitch = left_control_pitch
 
         ### INITIALIZE SUBSYSTEMS ###
