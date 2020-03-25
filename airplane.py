@@ -25,8 +25,7 @@ class Airplane():
         f.close()
         
         ### INSTANTIATE SUBSYSTEMS ###
-        left_control_pitch = Left_Control_Pitch(self)
-        self.left_control_pitch = left_control_pitch
+        self.left_control_pitch = Left_Control_Pitch()
 
         ### INITIALIZE SUBSYSTEMS ###
         self.left_control_pitch.__init__()
@@ -35,5 +34,6 @@ class Airplane():
         ### RUN EXECUTE METHODS ###
         self.left_control_pitch.level()
 
-Airplane.__init__(self)
-Airplane.periodic()
+plane = Airplane()
+plane.__init__()
+plane.periodic()
