@@ -15,6 +15,7 @@ sys.path.insert(0, '/home/ubuntu/airplane/subsystems')
 
 # subsystems
 from left_control_pitch import Left_Control_Pitch
+from aerial_camera import Aerial_Camera
 
 class Airplane():
 
@@ -26,14 +27,17 @@ class Airplane():
         
         ### INSTANTIATE SUBSYSTEMS ###
         self.left_control_pitch = Left_Control_Pitch()
+        self.aerial_camera = Aerial_Camera()
 
         ### INITIALIZE SUBSYSTEMS ###
         self.left_control_pitch.__init__()
+        self.aerial_camera.__init__()
 
     def periodic(self):
         ### RUN EXECUTE METHODS ###
         #self.left_control_pitch.level()
-        self.left_control_pitch.up()
+        #self.left_control_pitch.up()
+        self.aerial_camera.idle()
 
 plane = Airplane()
 plane.__init__()
