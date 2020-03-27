@@ -32,7 +32,8 @@ class Airplane():
 
     def periodic(self):
         ### RUN EXECUTE METHODS ###
-        self.left_control_pitch.level()
+        #self.left_control_pitch.level()
+        self.left_control_pitch.up()
 
 plane = Airplane()
 plane.__init__()
