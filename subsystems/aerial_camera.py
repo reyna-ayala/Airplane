@@ -1,4 +1,4 @@
-import picamera
+from picamera import PiCamera
 
 class Aerial_Camera():
 
