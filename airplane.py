@@ -37,7 +37,9 @@ class Airplane():
         ### RUN EXECUTE METHODS ###
         #self.left_control_pitch.level()
         #self.left_control_pitch.up()
-        self.aerial_camera.idle()
+        #self.aerial_camera.idle()
+        self.aerial_camera.take_photo()
+        #self.aerial_camera.record_vid()
 
 plane = Airplane()
 plane.__init__()
