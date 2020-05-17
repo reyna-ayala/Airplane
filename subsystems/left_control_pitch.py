@@ -3,7 +3,7 @@ import os
 import sys
 
 # RPi path
-sys.path.insert(0, '/home/ubuntu/airplane/subsystems/servo.py')
+sys.path.insert(0, '/home/reyna/Airplane/subsystems/servo.py')
 
 # other files
 from servo import Servo

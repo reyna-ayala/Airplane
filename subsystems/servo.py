@@ -16,12 +16,11 @@ class Servo():
         self.set_up(pin_num)
         self.servo.start(60)
         time.sleep(2)
-        GPIO.cleanup()
 
-    def set_angle(self, angle, rest):
+    def set_angle(self, pin_num, angle, rest):
+        #self.set_up(pin_num)
         self.servo.ChangeDutyCycle(2 + (angle / 18))
         time.sleep(rest)
         self.servo.ChangeDutyCycle(0)
         self.servo.stop()
-        GPIO.cleanup()
 
