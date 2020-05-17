@@ -35,9 +35,11 @@ class Airplane():
         #self.left_control_pitch.level()
         #self.left_control_pitch.up()
         #self.aerial_camera.idle()
-        #self.aerial_camera.take_photo()
+<<<<<<< HEAD
+=======
+        self.aerial_camera.take_photo()
         #self.aerial_camera.record_vid()
-        self.cockpit_motor.run_half_speed(5)
+>>>>>>> 422fe6f18ce717333ad2a5d9cbb8c099bb49a6a6
 
 plane = Airplane()
 plane.periodic()
