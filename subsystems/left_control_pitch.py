@@ -3,7 +3,7 @@ import os
 import sys
 
 # RPi path
-sys.path.insert(0, '/home/reyna/Airplane/subsystems/servo.py')
+sys.path.insert(0, '/home/reyna/Airplane/subsystems/')
 
 # other files
 from servo import Servo
@@ -11,23 +11,15 @@ from servo import Servo
 class Left_Control_Pitch():
     
     def __init__(self):
-        ### IS INIT? ###
-        f = open("log_file.txt", "w")
-        f.write("left_control_pitch init !!")
-        f.close()
-
         ### PREPARE PWM ###
         self.servo = Servo()
-        self.servo.initialize(17)
-        #self.servo.set_angle(60, 5)
+        self.servo.initialize(12)
 
     def level(self):
-        self.servo.set_up(17)
-        self.servo.set_angle(60, 0.5)
+        self.servo.run(5, 1) # turn towards 90
 
     def up(self):
-        self.servo.set_up(17)
-        self.servo.set_angle(30, 0.5)
+        self.servo.run(2.5, 1) # turn towards 0
 
     def down(self):
-        pass
+        self.servo.run(7.5, 1) # turn towards down
