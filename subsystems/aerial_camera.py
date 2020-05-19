@@ -34,9 +34,11 @@ class Aerial_Camera():
 
     def take_photo(self):
         self.set_up()
+        os.chdir('/home/reyna/Airplane/photo_album')
         self.does_file_exist('photo')
         self.camera.capture(self.this_file, 'jpeg', False, None, 0, True)
         time.sleep(10)
+        os.chdir('/home/reyna/Airplane')
         self.camera.close()
 
     def record_vid(self):
