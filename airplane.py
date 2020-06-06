@@ -27,23 +27,22 @@ class Airplane():
         
         ### INSTANTIATE SUBSYSTEMS ###
         self.left_control_pitch = Left_Control_Pitch()
-        self.aerial_camera = Aerial_Camera()
-#        self.cockpit_motor = Cockpit_Motor()
+#        self.aerial_camera = Aerial_Camera()
+        self.cockpit_motor = Cockpit_Motor()
 
         ### INITIALIZE SUBSYSTEMS ###
 
     def periodic(self):
         ### RUN EXECUTE METHODS ###
         self.left_control_pitch.level()
+        self.cockpit_motor.run_half_speed(1)
 
-        try:
-            self.aerial_camera.take_photo()
-            time.sleep(0.5)
-            self.aerial_camera.take_photo()
-            time.sleep(0.5)
-        finally:
-            self.aerial_camera.close()
+#        try:
+#            self.aerial_camera.record_vid(2)
+#        finally:
+#            self.aerial_camera.close()
 
 plane = Airplane()
 plane.periodic()
 GPIO.cleanup()
+Airplane.self.cockpit_motor.stop()

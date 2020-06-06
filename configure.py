@@ -9,15 +9,15 @@ sys.path.append('./subsystems')
 sys.path.insert(0, '/home/reyna/Airplane/subsystems')
 
 # subsystems
-from motor_pigpio import Motor_Pigpio
+from motor import Motor
 
 class Configure():
     
     def __init__(self):
         ### INSTANTIATE ###
-        self.cockpit = Motor_Pigpio()
+        self.cockpit = Motor()
 
         ### CALIBRATE ###
-        self.cockpit.calibrate(18)
+        self.cockpit.configure(12, "COCKPIT", 2000, 1000)
 
 config = Configure()
