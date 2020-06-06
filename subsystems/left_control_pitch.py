@@ -16,10 +16,10 @@ class Left_Control_Pitch():
         self.servo.initialize(12)
 
     def level(self):
-        self.servo.run(5, 1) # turn towards 90
+        self.servo.run(3.4, 1) # turn towards 90, 1 is rest
 
     def up(self):
-        self.servo.run(2.5, 1) # turn towards 0
+        self.servo.run(2, 1) # turn towards 0
 
     def down(self):
         self.servo.run(7.5, 1) # turn towards down

@@ -17,8 +17,10 @@ sys.path.insert(0, '/home/reyna/Airplane/subsystems')
 
 # subsystems
 from left_control_pitch import Left_Control_Pitch
-from aerial_camera import Aerial_Camera
-from cockpit_motor import Cockpit_Motor
+from right_control_pitch import Right_Control_Pitch
+from left_wing_flap import Left_Wing_Flap
+#from aerial_camera import Aerial_Camera
+#from cockpit_motor import Cockpit_Motor
 
 class Airplane():
 
@@ -27,15 +29,19 @@ class Airplane():
         
         ### INSTANTIATE SUBSYSTEMS ###
         self.left_control_pitch = Left_Control_Pitch()
+        self.right_control_pitch = Right_Control_Pitch()
+        self.left_wing_flap = Left_Wing_Flap()
 #        self.aerial_camera = Aerial_Camera()
-        self.cockpit_motor = Cockpit_Motor()
+#        self.cockpit_motor = Cockpit_Motor()
 
         ### INITIALIZE SUBSYSTEMS ###
 
     def periodic(self):
         ### RUN EXECUTE METHODS ###
-        self.left_control_pitch.level()
-        self.cockpit_motor.run_half_speed(1)
+        self.left_wing_flap.level()
+        self.left_wing_flap.up()
+        self.left_wing_flap.down()
+#        self.cockpit_motor.run_half_speed(1)
 
 #        try:
 #            self.aerial_camera.record_vid(2)
@@ -45,4 +51,4 @@ class Airplane():
 plane = Airplane()
 plane.periodic()
 GPIO.cleanup()
-Airplane.self.cockpit_motor.stop()
+#plane.self.cockpit_motor.stop()
