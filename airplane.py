@@ -36,7 +36,7 @@ class Airplane():
 
     def periodic(self):
         ### RUN EXECUTE METHODS ###
-        self.cockpit_motor.run_half_speed(1)
+        self.cockpit_motor.run(1, 1200)
 
 #        try:
 #            self.aerial_camera.record_vid(2)
@@ -46,4 +46,4 @@ class Airplane():
 plane = Airplane()
 plane.periodic()
 GPIO.cleanup()
-plane.cockpit_motor.stop()
+#plane.cockpit_motor.stop()

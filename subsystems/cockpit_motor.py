@@ -17,11 +17,11 @@ class Cockpit_Motor():
         self.motor.arm(12, 2000, 1000)
         time.sleep(2)
 
-    def run_half_speed(self, length): # seconds
+    def run(self, length, speed): # seconds
         t = 0
         length = int(length)
         while length > t:
-            self.motor.run(12, 1500)
+            self.motor.run(12, speed)
             t += 1
             time.sleep(1)
 
