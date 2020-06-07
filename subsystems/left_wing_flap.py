@@ -13,7 +13,7 @@ class Left_Wing_Flap():
     def __init__(self):
         ### PREPARE PWM ###
         self.servo = Servo()
-        self.servo.initialize(18)
+        self.servo.initialize(18, 7.5)
 
     def level(self):
         self.servo.run(1.4, 1) # turn towards 90, 1 is rest

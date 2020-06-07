@@ -8,7 +8,8 @@ class Motor():
 
     ### FUNCTIONS ###
     def __init__(self):
-        self.pi = pigpio.pi('192.168.86.27', 8888)
+        #self.pi = pigpio.pi('192.168.86.27', 8888)
+        self.pi = pigpio.pi()
         
     def configure(self, pin, placement, max_throttle, min_throttle):
         self.pi.set_servo_pulsewidth(pin, 0)
@@ -20,8 +21,8 @@ class Motor():
             print("Set to MAX. Listen for special tone 123 and battery beeps.")
             time.sleep(2)
             print("Once beeps twice, latched max throttle. Enter.")
-            inpt = input()
-            if inpt == "":
+            n_inpt = input()
+            if n_inpt == "":
                 self.pi.set_servo_pulsewidth(pin, min_throttle)
                 time.sleep(1)
                 print("Long Beeeep indicates latched zero position of throttle.")

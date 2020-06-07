@@ -14,14 +14,15 @@ class Cockpit_Motor():
     def __init__(self):
         ### PREPARE PIGPIO ###
         self.motor = Motor()
-        self.motor.arm(18, 2000, 1000)
+        self.motor.arm(12, 2000, 1000)
         time.sleep(2)
 
     def run_half_speed(self, length): # seconds
-        time = 0
-        whie length < time:
-            self.motor.run(18, 1500)
-            time += 1
+        t = 0
+        length = int(length)
+        while length > t:
+            self.motor.run(12, 1500)
+            t += 1
             time.sleep(1)
 
     def stop(self):

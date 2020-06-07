@@ -13,13 +13,10 @@ class Right_Wing_Flap():
     def __init__(self):
         ### PREPARE PWM ###
         self.servo = Servo()
-        self.servo.initialize(23)
+        self.servo.initialize(26, 7.5)
 
     def level(self):
-        self.servo.run(12.7, 1) # turn towards 90, 1 is rest
-
-    def up(self):
-        self.servo.run(12.5, 1) # turn towards 0
+        self.servo.run(12, 1) # turn towards 90, 1 is rest
 
     def down(self):
         self.servo.run(6, 1) # turn towards down
